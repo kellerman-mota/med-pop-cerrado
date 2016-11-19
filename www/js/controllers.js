@@ -8,9 +8,9 @@ angular.module('starter.controllers', [])
 
   function buscarPlantas() {
       $state.go('tab.plantas',{filtro:$scope.data.filtro});
-  };
+  }
 })
 
 .controller('PlantaCtrl', function($scope, $stateParams, Plantas) {
     $scope.plantasFiltradas = Plantas.filtrar($stateParams.filtro);
-})
+});

@@ -20,7 +20,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-  })
+  });
 })
 
   .config(function($stateProvider, $urlRouterProvider) {
@@ -74,9 +74,9 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
           templateUrl: "templates/tab-contato.html",
         }
       }
-    })
+    });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/principal');
 
-  })
+  });
