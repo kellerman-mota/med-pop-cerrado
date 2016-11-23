@@ -1,10 +1,12 @@
 <ion-view view-title="Plantas">
       <ion-content class="padding">
-          <ion-list>
-            <ion-item ng-repeat="p in plantasFiltradas">
-              <img  src="img/plantas/{{p.img}}" width="100"/>
-              {{p.nome}}
-            </ion-item>
-          </ion-list>
+          <div class="list">
+            <a class="item item-avatar" href="#/tab/planta/{{p.id}}"
+            ng-repeat="p in plantasFiltradas">
+              <img  src="img/plantas/{{p.img}}">
+              <h2>{{p.nome}}</h2>
+              <p>{{p.nomeCientifico}}</p>
+            </a>
+          </div>
       </ion-content>
 </ion-view>

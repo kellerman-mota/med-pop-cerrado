@@ -6,11 +6,19 @@ angular.module('starter.controllers', [])
   };
   $scope.buscarPlantas = buscarPlantas;
 
-  function buscarPlantas() {
-      $state.go('tab.plantas',{filtro:$scope.data.filtro});
+  function buscarPlantas(criterio) {
+      $state.go('tab.plantas',{filtro:$scope.data.filtro, criterio: criterio});
   }
 })
 
 .controller('PlantaCtrl', function($scope, $stateParams, Plantas) {
-    $scope.plantasFiltradas = Plantas.filtrar($stateParams.filtro);
+    if($stateParams.id){
+      $scope.planta = Plantas.get($stateParams.id);
+    }
+    if($stateParams.criterio =='planta'){
+      $scope.plantasFiltradas = Plantas.filtrarPorPlanta($stateParams.filtro);
+    }
+    if($stateParams.criterio =='sintoma'){
+      $scope.plantasFiltradas = Plantas.filtrarPorSintoma($stateParams.filtro);
+    }
 });

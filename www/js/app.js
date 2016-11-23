@@ -58,10 +58,20 @@ angular.module('starter', ['ionic','starter.controllers','starter.services'])
       })
 
     .state('tab.plantas', {
-      url: "/plantas?filtro",
+      url: "/plantas?filtro&criterio",
       views: {
         'tab-principal': {
           templateUrl: "templates/tab-plantas.html",
+          controller: 'PlantaCtrl'
+        }
+      }
+    })
+
+    .state('tab.planta-detalhes', {
+      url: "/planta/:id",
+      views: {
+        'tab-principal': {
+          templateUrl: "templates/tab-planta-detalhes.html",
           controller: 'PlantaCtrl'
         }
       }
