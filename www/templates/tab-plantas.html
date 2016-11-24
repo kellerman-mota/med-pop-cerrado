@@ -1,12 +1,18 @@
 <ion-view view-title="Plantas">
       <ion-content class="padding">
-          <div class="list">
+          <div class="list" ng-if="plantasFiltradas">
             <a class="item item-avatar" href="#/tab/planta/{{p.id}}"
             ng-repeat="p in plantasFiltradas">
               <img  src="img/plantas/{{p.img}}">
               <h2>{{p.nome}}</h2>
-              <p>{{p.nomeCientifico}}</p>
+              <p><span style="font-style: italic;">{{p.nomeCientifico}}</span></p>
             </a>
+          </div>
+          <div class="list" ng-if="!plantasFiltradas[0]">
+            <div class="item item-icon-left">
+               <i class="icon ion-sad-outline"></i>
+               Nenhum item foi encontrado contendo a palavra <strong>{{data.filtro}}</strong>
+            </div>
           </div>
       </ion-content>
 </ion-view>

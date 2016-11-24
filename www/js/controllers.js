@@ -12,6 +12,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlantaCtrl', function($scope, $stateParams, Plantas) {
+    $scope.data={
+      filtro: $stateParams.filtro,
+    };
     if($stateParams.id){
       $scope.planta = Plantas.get($stateParams.id);
     }
